@@ -9,11 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        custom_shadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         softElevatedShadow: "0px 1px 2px 0px #0A0D120D",
         subtleDeepShadow: "0px 1px 2px 0px #1018280D",
-        // subtleDeepShadow1: '0px -2px 0px 0px #0A0D120D inset',
-        // subtleDeepShadow2: '0px 0px 0px 1px #0A0D122E inset',
+        'custom-light': '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',      
+        'custom-top-inset': '0px -2px 0px 0px rgba(10, 13, 18, 0.05) inset',
+        'custom-border-inset': '0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset',
+        'custom_shadow': '0px 1px 2px 0px rgba(10, 13, 18, 0.05)',
+        
       },
       fontSize: {
         h1: ["30px", { lineHeight: "38px" }],
