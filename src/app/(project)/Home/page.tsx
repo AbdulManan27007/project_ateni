@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { Flex, Radio } from "antd";
+import CampaignCard from "@/app/components/campaignCard";
 export const page = () => {
   return (
     <div className="flex flex-row h-screen">
@@ -24,7 +26,7 @@ export const page = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-row w-full justify-between px-8 py-9">
+          <div className="flex flex-row w-full justify-between dashboard_container py-9">
             <div className="space-y-1">
               <p className="font-plus_jakarta_sans text-h2 font-semibold text-darkGray">
                 Dashboard
@@ -62,23 +64,62 @@ export const page = () => {
               </div>
             </div>
           </div>
-          <div className="max-w-[346px] w-full border-2 rounded-[12px] border-blue shadow-custom_shadow">
-            <div className=" max-w-[250px] w-full my-[20px]">
-              <div className="font-plus_jakarta_sans text-h5 font-semibold text-lightGray">Campaigns</div>
-              <div className="flex justify-between ">
-                <div className="font-plus_jakarta_sans text-h1 font-semibold text-darkGray">10</div>
-                <div className="my-[7px]">
-                  <div className="flex flex-row py-[2px] px-[6px] border border-[#D5D7DA] rounded-[6px] items-center justify-center space-x-1 shadow-custom_shadow">
-                    <div>
-                      <Image
-                        src="/images/dashboard/arrow-up-right.png"
-                        height={12}
-                        width={12}
-                        alt=""
-                      />
-                    </div>
-                    <p className="font-inter text-h5 text-center font-medium text-midgray">2.4%</p>
-                  </div>
+          <div className="flex flex-row space-x-[20px] dashboard_container">
+            <CampaignCard
+              title="Campaigns"
+              count={10}
+              bordercolor="border-blue"
+              percentage="2.4%"
+              iconSrc="/images/dashboard/announcement-button-2.png"
+              arrowSrc="/images/dashboard/arrow-up-right.png"
+            />
+            <CampaignCard
+              title="Business opportunities"
+              count={8}
+              bordercolor="border-[#E9EAEB]"
+              percentage="6.2%"
+              iconSrc="/images/dashboard/wallet-button.png"
+              arrowSrc="/images/dashboard/arrow-up-right.png"
+            />
+            <CampaignCard
+              title="Lorem ipsum"
+              count={3}
+              bordercolor="border-[#E9EAEB]"
+              percentage="0.8%"
+              iconSrc="/images/dashboard/user-circle.png"
+              arrowSrc="/images/dashboard/arrow-up-right.png"
+            />
+          </div>
+          <div className="dashboard_container">
+            <div className="flex justify-between pt-9">
+              <div className=" flex items-center font-inter font-semibold text-h3 text-darkGray ">
+                Business opportunities found by Margot{" "}
+                <span className=" text-parrotGreen">+104%</span>{" "}
+              </div>
+              <div className="flex flex-row gap-3">
+                <div>
+                  {" "}
+                  <Flex vertical gap="middle">
+                    <Radio.Group defaultValue="a" size="large" className="">
+                      <Radio.Button value="a" className=" font-inter font-semibold text-h5 text-midgray ">12 months </Radio.Button>
+                      <Radio.Button value="b" className=" font-inter font-semibold text-h5 text-midgray ">30 days</Radio.Button>
+                      <Radio.Button value="c" className=" font-inter font-semibold text-h5 text-midgray ">7 days</Radio.Button>
+                      <Radio.Button value="d" className=" font-inter font-semibold text-h5 text-midgray ">24 hours</Radio.Button>
+                    </Radio.Group>
+                  </Flex>
+                </div>
+                <div className="py-2 px-3 rounded-[8px] border border-[#D5D7DA] shadow-custom_shadow">
+                  <button className="flex flex-row items-center gap-1">
+                    {" "}
+                    <Image
+                      src="/images/dashboard/filter-lines.png"
+                      height={20}
+                      width={20}
+                      alt=""
+                    />{" "}
+                    <p className="font-plus_jakarta_sans font-semibold text-h5 text-midgray"></p>{" "}
+                    Filters
+                  </button>
                 </div>
               </div>
             </div>

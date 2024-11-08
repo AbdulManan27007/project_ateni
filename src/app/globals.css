@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.dashboard_container{
+    max-width: 1080px;
+    margin: auto;
+}
 
 
